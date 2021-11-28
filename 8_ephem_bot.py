@@ -12,7 +12,7 @@
   бота отвечать, в каком созвездии сегодня находится планета.
 
 """
-from config import API_TOKEN
+from config import load
 import random
 import logging
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
@@ -89,7 +89,8 @@ def talk_to_me(update, context):
 
 
 def main():
-    mybot = Updater(API_TOKEN, request_kwargs=PROXY, use_context=True)
+    config = load()
+    mybot = Updater(config.api_token, request_kwargs=PROXY, use_context=True)
     dp = mybot.dispatcher
     dp.add_handler(CommandHandler("start", greet_user))
     dp.add_handler(CommandHandler("planets", planets))

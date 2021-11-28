@@ -125,5 +125,5 @@ dmypy.json
 #pycharm
 .idea/
 
-#configpy
-config.py
+#secretpy
+secret.py
