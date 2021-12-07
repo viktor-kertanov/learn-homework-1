@@ -124,3 +124,6 @@ dmypy.json
 
 #pycharm
 .idea/
+
+#secretpy
+secret.py
